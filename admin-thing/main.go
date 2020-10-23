@@ -47,6 +47,9 @@ func main() {
 	http.HandleFunc(server.HelloRoute, server.HelloHandler(tmpls["hello.gotmpl"]))
 	http.HandleFunc(server.SecretRoute, protect(userDB, server.SecretHandler(tmpls["secret.gotmpl"])))
 
+	// e.g. http://localhost:8080/public/hey.txt
+	http.Handle("/public/", http.StripPrefix("/public", http.FileServer(http.Dir("web/static"))))
+	
 	http.ListenAndServe(":8080", nil)
 }
 
