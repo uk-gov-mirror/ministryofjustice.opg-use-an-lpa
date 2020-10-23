@@ -6,7 +6,7 @@
   <form method="post">
     <label>
         Email
-        <input name="email" type="text" placeholder="example@example.com"/>
+        <input name="email" type="text" placeholder="example@example.com" value="{{ .Query }}"/>
     </label>
     <input type="submit" value="Search" />
   </form>
@@ -14,12 +14,10 @@
   <table>
   <tr>
     <th>Email</th>
-    <th>Password
   </tr>
   {{ range .Users }}
     <tr>
       <td>{{ .Email }}</td>
-      <td>{{ .Password }}</td>
     </tr>
   {{ end }}
   </table>
