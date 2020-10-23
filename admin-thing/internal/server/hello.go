@@ -1,7 +1,7 @@
 package server
 
 import (
-	"html/template"
+	"io"
 	"log"
 	"net/http"
 )
@@ -12,7 +12,11 @@ type myThings struct {
 	Name string
 }
 
-func HelloHandler(tmpl *template.Template) http.HandlerFunc {
+type Template interface {
+	ExecuteTemplate(io.Writer, string, interface{}) error
+}
+
+func HelloHandler(tmpl Template) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodPost {
 			http.SetCookie(w, &http.Cookie{Name: "login", Value: r.FormValue("username")})
