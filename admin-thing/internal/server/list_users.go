@@ -72,7 +72,8 @@ func ListUsersHandler(tmpl Template) http.HandlerFunc {
 
 		data := struct {
 			Users []User
-		}{users}
+			Query string
+		}{users, r.FormValue("email")}
 
 		if err := tmpl.ExecuteTemplate(w, "page", data); err != nil {
 			log.Println(err)
