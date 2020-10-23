@@ -48,7 +48,7 @@ func TestHelloHandlerLoginRequestWithExpectedValues(t *testing.T) {
 	w := httptest.NewRecorder()
 	r := httptest.NewRequest(http.MethodPost, "/", nil)
 	r.ParseForm()
-	r.Form.Set("Email", "Josh")
+	r.Form.Set("Email", "someone@somewhere.co.uk")
 	r.Form.Set("Password", "Password123")
 
 	handler(w, r)
