@@ -1,0 +1,9 @@
+{{ template "page" . }}
+
+{{ define "title" }}Users{{ end }}
+
+{{ define "main" }}
+  {{ range .Users }}
+    {{ .Email }}</br>
+  {{ end }}
+{{ end }}
