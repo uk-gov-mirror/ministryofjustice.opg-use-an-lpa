@@ -54,7 +54,7 @@
 
                 {% set totalLpas = total_lpas %}
 
-                <h2 class="govuk-heading-m count-lpas-added">
+                <h2 class="govuk-heading-l">
                     {% trans count totalLpas %}You have %count% LPA in your account | You have %count% LPAs in your account{% endtrans %}
                 </h2>
 
@@ -68,7 +68,7 @@
                         {% set applicationHasRestrictions = lpa.applicationHasRestrictions %}
                         {% set applicationHasGuidance = lpa.applicationHasGuidance %}
 
-                        <span class="govuk-heading-l govuk-!-margin-top-5 govuk-!-margin-bottom-3">{{ donor_name_with_dob_removed(donorName) }}</span>
+                        <span class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-3">{{ donor_name_with_dob_removed(donorName) }}</span>
 
                         {% if lpa.status|lower == 'registered' and actorActive %}
                             <article class="moj-ticket-panel" aria-label="Registered lpa panel">
