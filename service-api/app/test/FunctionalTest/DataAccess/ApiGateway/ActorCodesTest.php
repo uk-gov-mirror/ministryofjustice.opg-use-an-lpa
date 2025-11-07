@@ -111,7 +111,7 @@ class ActorCodesTest extends AbstractFunctionalTestCase
             )
             ->setBody(
                 [
-                    'code' => $matcher->like('ISAVALIDCODE'),
+                    'code' => $matcher->regex('ISAVALIDCODE', '[A-Z0-9]{12}'),
                 ]
             );
 
@@ -120,7 +120,7 @@ class ActorCodesTest extends AbstractFunctionalTestCase
             ->setStatus(200)
             ->setBody(
                 [
-                    'codes_revoked' => 1,
+                    'codes revoked' => 1,
                 ]
             );
 
