@@ -1,6 +1,8 @@
 module github.com/ministryofjustice/opg-use-an-lpa
 
-go 1.24.4
+go 1.25.3
+
+toolchain go1.25.3
 
 require (
 	github.com/aws/aws-lambda-go v1.49.0
